@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+    /* Floating Social Icons */
+    .social-icons {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        z-index: 1000;
+    }
+    .social-icons a {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .social-icons img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+
+    /* Profile Picture */
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 3px solid #333;
+    }
+
+    /* CV Embed */
+    .cv-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .cv-embed {
+        width: 100%;
+        height: 500px;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<!-- Floating Social Icons -->
+<div class="social-icons">
+    <a href="https://www.linkedin.com/in/sujith-s-641577205/" target="_blank"><img src="{{ url_for('static', filename='linkedln.png') }}" alt="LinkedIn"></a>
+    <a href="https://github.com/sujith-srinivas-17" target="_blank"><img src="{{ url_for('static', filename='github.png') }}" alt="GitHub"></a>
+    <a href="https://www.instagram.com/____ahem_____/" target="_blank"><img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram"></a>
+</div>
+
+<div class="container text-center">
+    <h1>Hi, I'm Sujith Srinivas 👋</h1>
+    <p class="lead">I automate workflows using <strong>Power Platform, VBA, and Python</strong>.</p>
+
+    <!-- Profile Picture -->
+    <img src="{{ url_for('static', filename='mypic.jpeg') }}" alt="Profile Picture" class="profile-pic">
+
+    <hr>
+
+    <!-- About Me Section -->
+    <h2>About Me</h2>
+    <p>I'm an automation expert with a strong background in Power Platform, VBA, and Python. 
+       I have built numerous workflows and automation solutions for Excel, SAP, and data integration.</p>
+
+    <h3>Contact Me</h3>
+    <p>Email: sujithreddyaug1998@gmail.com</p>
+
+    <hr>
+
+    <!-- Skills Section -->
+    <h2>My Skills</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='power.jpg') }}" alt="Power Platform" width="50">
+            <h3>Power Platform</h3>
+            <p>Power Automate | Power Apps | Power BI</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='excel.jpg') }}" alt="Excel VBA" width="50">
+            <h3>VBA & Excel</h3>
+            <p>Advanced automation for Excel & SAP</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='python.png') }}" alt="Python" width="50">
+            <h3>Python (Learning)</h3>
+            <p>Building automation scripts & Flask apps</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Projects Section -->
+    <h2>Recent Projects</h2>
+    <ul class="list-group">
+        <li class="list-group-item">✅ SAP automation using VBA</li>
+        <li class="list-group-item">✅ Power Automate workflow for data integration</li>
+        <li class="list-group-item">✅ Python Flask web app for task tracking</li>
+    </ul>
+
+    <hr>
+
+    <!-- CV Section -->
+    <div class="cv-container">
+        <h2>My Resume</h2>
+        <iframe class="cv-embed" src="{{ url_for('static', filename='mycv.pdf') }}"></iframe>
+        <br>
+        <a href="{{ url_for('static', filename='mycv.pdf') }}" download class="btn btn-primary mt-3">Download My CV</a>
+    </div>
+</div>
+{% endblock %}
